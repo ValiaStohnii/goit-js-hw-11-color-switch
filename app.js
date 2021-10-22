@@ -7,6 +7,8 @@ const colors = [
   '#795548',
 ];
 
+const CHANGE_COLOR = 1000;
+
 const refs = {
     displayBody: document.querySelector('.body'),
     startClick: document.querySelector('.start_button'),
@@ -14,35 +16,28 @@ const refs = {
 }
 
 refs.startClick.addEventListener('click', onStartButtonClick);
-// refs.stopClick.addEventListener('click', onStopButtonClick);
 
-// const bodyColor = colors.map((color)=>color);
-
-// console.log(bodyColor);
 
 function onStartButtonClick() {
-    colors.map((color) =>
-    refs.displayBody.style.backgroundColor = color);
+  const intervalId = setInterval(() => {
     
+    const bodyBgChange = Math.floor(Math.random() * colors.length);
+    const selectedcolor = colors[bodyBgChange];
+    refs.displayBody.style.backgroundColor = selectedcolor;
+    console.log("set interval")
+
+    
+    refs.startClick.disabled=true;
+    
+  }, CHANGE_COLOR);
+
+  refs.stopClick.addEventListener('click', () => {
+    clearInterval(intervalId);
+    refs.startClick.disabled=false;
+  });
 }
 
-// console.log(onStartButtonClick);
-
-// setInterval(function () { 
-//     const bodyBgChange = Math.floor(Math.random() * colors.length);
-//     const selectedcolor = colors[bodyBgChange];
-//     refs.displayBody.style.backgroundColor=selectedcolor);
-// }, 1000);
 
 
-// function onStopButtonClick() {
-    
-// }
-
-// const randomIntegerFromInterval = (min, max) => {
-//   return Math.floor(Math.random() * (max - min + 1) + min);
-// };
-
-// setInterval(bodyColor, 1000);
    
 
