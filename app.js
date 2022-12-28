@@ -3,7 +3,7 @@ const colors = [
   '#FF9800',
 ];
 
-const CHANGE_COLOR = 200;
+const CHANGE_COLOR = 100;
 
 const refs = {
     displayBody: document.querySelector('.body'),
