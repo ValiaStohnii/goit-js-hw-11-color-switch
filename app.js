@@ -1,13 +1,9 @@
 const colors = [
-  '#FFFFFF',
-  '#2196F3',
   '#4CAF50',
   '#FF9800',
-  '#009688',
-  '#795548',
 ];
 
-const CHANGE_COLOR = 1000;
+const CHANGE_COLOR = 200;
 
 const refs = {
     displayBody: document.querySelector('.body'),
